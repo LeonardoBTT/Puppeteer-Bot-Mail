@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const capa = require("./magazines_cover");
 
 (async () => {
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({args: ["--no-sandbox"]});
     function process() {
       var clock = new Date().getHours()+':'+ new Date().getMinutes();
       
