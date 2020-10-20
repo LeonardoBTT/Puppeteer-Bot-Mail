@@ -45,7 +45,7 @@ async function get(browser,magazine) {
     };
   }
   await page.close();
-  
+
   // Me envia os resultados por e-mail
   mail.me(TODAY_MAGAZINES.toString().replace(',',''));
 }

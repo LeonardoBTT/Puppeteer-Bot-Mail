@@ -1,14 +1,17 @@
 function me(covers) {
   var nodemailer = require('nodemailer');
 
-  const USER = 'leonardo1silva2';
-  const PASS = 'qwer0125698'
+  const USER = process.env.USU;
+  const PASS = process.env.PAS;
+  const TO = process.env.MAILTO;
 
   var today = new Date();
   var today = (today.getDate())+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: USER+'@gmail.com',
       pass: PASS
@@ -17,7 +20,7 @@ function me(covers) {
 
   var mailOptions = {
     from: USER+'@gmail.com',
-    to: 'leonardo.bits@gmail.com',
+    to: TO,
     subject: '📰 Jornais ['+today+']',
     html: covers,
     text: 'That was easy!'
