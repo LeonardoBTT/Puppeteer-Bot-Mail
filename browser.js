@@ -2,6 +2,8 @@ const puppeteer = require('puppeteer');
 const capa = require("./magazines_cover");
 const mail = require('./mail');
 
+const MAGAZINEHOUR = process.env.MAGAZINEHOUR;
+
 //https://www.google.com/settings/security/lesssecureapps
 //https://accounts.google.com/DisplayUnlockCaptcha
 
@@ -14,7 +16,7 @@ async function main() {
     var clock = new Date().getHours()-3;
 
     // Captura os jornais e me envia por e-mail
-    if(clock==6) {
+    if(clock==MAGAZINEHOUR) {
       var magazines = ['valor economico','folha de s paulo','o estado de sao paulo','o globo', 'correio do povo', 'correio braziliense','folha de pernambuco'];
       capa.get(browser,magazines);
     }

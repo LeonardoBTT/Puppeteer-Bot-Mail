@@ -19,7 +19,7 @@ function me(covers) {
   });
 
   var mailOptions = {
-    from: USER+'@gmail.com',
+    from: USER,
     to: TO,
     subject: '📰 Jornais ['+today+']',
     html: covers,
