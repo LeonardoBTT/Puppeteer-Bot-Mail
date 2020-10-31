@@ -13,7 +13,7 @@ function me(covers) {
     port: 465,
     secure: true,
     auth: {
-      user: USER+'@gmail.com',
+      user: USER,
       pass: PASS
     }
   });
