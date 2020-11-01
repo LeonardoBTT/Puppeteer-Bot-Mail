@@ -6,12 +6,10 @@ function me(covers) {
   const TO = process.env.MAILTO;
 
   var today = new Date();
-  var today = (today.getDate())+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+  var today = ("0" + today.getDate()).slice(-2)+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
   var transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    service: 'gmail',
     auth: {
       user: USER,
       pass: PASS
@@ -22,8 +20,7 @@ function me(covers) {
     from: USER,
     to: TO,
     subject: '📰 Jornais ['+today+']',
-    html: covers,
-    text: 'That was easy!'
+    html: covers
   };
 
   transporter.sendMail(mailOptions, function(error, info){

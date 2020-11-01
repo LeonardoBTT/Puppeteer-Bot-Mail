@@ -36,12 +36,12 @@ async function get(browser,magazine) {
 
     // Se a tada for atual = push no array
     var today = new Date();
-    var today = (today.getDate())+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    var today = ("0" + today.getDate()).slice(-2)+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
     if (DATE==today) {
       const capa_link = await page.evaluate(SELECTOR => {
         return document.querySelector(SELECTOR).src
       }, SELECTOR_IMG);
-      TODAY_MAGAZINES.push('<img src="'+capa_link+'"/>')
+      TODAY_MAGAZINES.push('<img src="'+capa_link+'"/>');
     };
   }
   await page.close();
