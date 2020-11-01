@@ -12,8 +12,8 @@ console.log("Iniciando ...");
 async function main() {
   const browser = await puppeteer.launch({headless: true,args: ['--no-sandbox','--disable-setuid-sandbox']});
 
-  function processo() {
-    var clock = new Date().getHours();
+  function process() {
+    var clock = new Date().getHours()-3;
 
     // Captura os jornais e me envia por e-mail
     if(clock==MAGAZINEHOUR) {
