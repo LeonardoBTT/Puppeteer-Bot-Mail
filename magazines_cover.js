@@ -36,7 +36,7 @@ async function get(browser,magazine) {
 
     // Se a tada for atual = push no array
     var today = new Date();
-    var today = ("0" + today.getDate()).slice(-2)+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    var today = ("0" + today.getDate()).slice(-2)+'/'+("0" + today.getMonth()+1).slice(-2)+'/'+today.getFullYear();
     if (DATE==today) {
       const capa_link = await page.evaluate(SELECTOR => {
         return document.querySelector(SELECTOR).src

@@ -6,7 +6,7 @@ function me(covers) {
   const TO = process.env.MAILTO;
 
   var today = new Date();
-  var today = ("0" + today.getDate()).slice(-2)+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+  var today = ("0" + today.getDate()).slice(-2)+'/'+("0" + today.getMonth()+1).slice(-2)+'/'+today.getFullYear();
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
